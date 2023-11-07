@@ -1,0 +1,8 @@
+Run project
+
+if use NPM
+"npm run dev"
+
+Run json-server with port 5000
+"json-server -w db.json -p 5000"
+

@@ -18,16 +18,19 @@ export default function AddProduct() {
 
     setIsMutating(true);
 
-    await fetch("http://localhost:5000/products", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        title: title,
-        price: price,
-      }),
-    });
+    await fetch(
+      "https://my-json-server.typicode.com/OjekPantai/crud-nextjs/products",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          title: title,
+          price: price,
+        }),
+      }
+    );
 
     setIsMutating(false);
     setTitle("");

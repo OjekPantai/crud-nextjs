@@ -11,9 +11,12 @@ type Product = {
 };
 
 async function getProducts() {
-  const res = await fetch("http://localhost:5000/products", {
-    cache: "no-store",
-  });
+  const res = await fetch(
+    "https://my-json-server.typicode.com/OjekPantai/crud-nextjs/products",
+    {
+      cache: "no-store",
+    }
+  );
   return res.json();
 }
 

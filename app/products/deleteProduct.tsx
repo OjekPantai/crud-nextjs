@@ -20,9 +20,12 @@ export default function DeleteProduct(product: Product) {
   async function handleDelete(productId: number) {
     setIsMutating(true);
 
-    await fetch(`http://localhost:5000/products/${productId}`, {
-      method: "DELETE",
-    });
+    await fetch(
+      `https://my-json-server.typicode.com/OjekPantai/crud-nextjs/products/${productId}`,
+      {
+        method: "DELETE",
+      }
+    );
 
     setIsMutating(false);
     router.refresh();

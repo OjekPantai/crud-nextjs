@@ -22,16 +22,19 @@ export default function UpdateProduct(product: Product) {
   async function handleUpdate(e: SyntheticEvent) {
     e.preventDefault();
     setIsMutating(true);
-    await fetch(`http://localhost:5000/products/${product.id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        title: title,
-        price: price,
-      }),
-    });
+    await fetch(
+      `https://my-json-server.typicode.com/OjekPantai/crud-nextjs/products/${product.id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          title: title,
+          price: price,
+        }),
+      }
+    );
 
     setIsMutating(false);
     router.refresh();
